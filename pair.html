@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>King Binu Boy - MD V2 Pair 👑</title>
+  <style>
+    body { background: #111; color: #fff; font-family: sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+    .box { background: #222; padding: 30px; border-radius: 20px; text-align: center; width: 320px; box-shadow: 0 0 20px gold; }
+    h1 { color: gold; }
+    input { width: 90%; padding: 12px; border-radius: 10px; border: none; margin: 15px 0; font-size: 16px; }
+    button { background: gold; color: #000; padding: 12px 25px; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; width: 100%; }
+    #code { margin-top: 20px; font-size: 22px; color: #0f0; font-weight: bold; letter-spacing: 3px; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>👑 King Binu Boy MD V2 👑</h1>
+    <p>WhatsApp Pairing Code</p>
+    <input type="text" id="number" placeholder="947XXXXXXXX">
+    <button onclick="getCode()">Get Pairing Code ✨</button>
+    <div id="code"></div>
+    <p style="font-size:12px; margin-top:20px; color:#aaa;">1. Number eka dala Get obanna<br>2. WhatsApp > Linked Devices > Link with phone number<br>3. Code eka danna 👑</p>
+  </div>
+
+  <script>
+    async function getCode() {
+      let num = document.getElementById('number').value.replace(/[^0-9]/g,'')
+      if(!num) return alert('Number eka danna!')
+      document.getElementById('code').innerHTML = '⏳ Code hadanawa...'
+      // Me thana oyage backend API link eka danna
+      // Danata demo code ekak pennanawa
+      setTimeout(()=> {
+        let demo = Math.random().toString(36).substring(2,6).toUpperCase() + '-' + Math.random().toString(36).substring(2,6).toUpperCase()
+        document.getElementById('code').innerHTML = '👑 ' + demo + ' 👑'
+      }, 2000)
+    }
+  </script>
+</body>
+</html>
